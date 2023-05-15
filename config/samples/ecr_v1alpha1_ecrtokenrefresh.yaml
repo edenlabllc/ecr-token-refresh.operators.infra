@@ -1,0 +1,14 @@
+apiVersion: ecr.aws.edenlab.io/v1alpha1
+kind: ECRTokenRefresh
+metadata:
+  labels:
+    app.kubernetes.io/name: ecrtokenrefresh
+    app.kubernetes.io/instance: ecrtokenrefresh-sample
+    app.kubernetes.io/part-of: ecr-token-refresh
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: ecr-token-refresh
+  name: ecr-credentials
+spec:
+  ecrRegistry: 288509344804.dkr.ecr.eu-north-1.amazonaws.com
+  frequency: 2m
+  region: eu-north-1
