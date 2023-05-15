@@ -1,0 +1,31 @@
+# permissions for end users to edit ecrtokenrefreshes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: ecrtokenrefresh-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: ecr-token-refresh
+    app.kubernetes.io/part-of: ecr-token-refresh
+    app.kubernetes.io/managed-by: kustomize
+  name: ecrtokenrefresh-editor-role
+rules:
+- apiGroups:
+  - ecr.aws.edenlab.io
+  resources:
+  - ecrtokenrefreshes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ecr.aws.edenlab.io
+  resources:
+  - ecrtokenrefreshes/status
+  verbs:
+  - get
