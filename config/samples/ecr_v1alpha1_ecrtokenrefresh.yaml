@@ -10,5 +10,5 @@ metadata:
   name: ecr-credentials
 spec:
   ecrRegistry: 288509344804.dkr.ecr.eu-north-1.amazonaws.com
-  frequency: 2m
+  frequency: 8h
   region: eu-north-1

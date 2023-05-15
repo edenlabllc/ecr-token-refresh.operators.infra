@@ -1,4 +1,4 @@
-# ecr token refresh operator
+# ECR token refresh operator
 The `ecr token refresh` operator refreshes automatically the Amazon ECR authorization token before it expires.
 
 ## Description
@@ -8,7 +8,7 @@ This operator contains one CRD which directs the operator to create/refresh Amaz
 ```yaml
 spec:
   ecrRegistry: 288509344804.dkr.ecr.eu-north-1.amazonaws.com
-  frequency: 2m
+  frequency: 8h
   region: eu-north-1
 ```
 
