@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: edenlabllc/fhir.ecr_build_push.action
-          ref: ${{ env.ECR_BUILD_PUSH_ACTION_VERSION }}
+          ref: feature/FFS-42-core-gitflow-action-should-support-public-ecr-repos
           token: ${{ secrets.GH_TOKEN_REPO_FULL_ACCESS }}
           path: .github/actions/ecr-build-push
 
