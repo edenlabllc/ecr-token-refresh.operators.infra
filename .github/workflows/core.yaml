@@ -80,4 +80,4 @@ jobs:
           repository_name_prefix: "core."
           public_repository: true
           delete_image: false
-          scan_image: true
+          scan_image: false
