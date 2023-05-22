@@ -1,0 +1,27 @@
+# permissions for end users to view ecrtokenrefreshes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: ecrtokenrefresh-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: ecr-token-refresh
+    app.kubernetes.io/part-of: ecr-token-refresh
+    app.kubernetes.io/managed-by: kustomize
+  name: ecrtokenrefresh-viewer-role
+rules:
+- apiGroups:
+  - ecr.aws.edenlab.io
+  resources:
+  - ecrtokenrefreshes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ecr.aws.edenlab.io
+  resources:
+  - ecrtokenrefreshes/status
+  verbs:
+  - get
