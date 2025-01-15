@@ -18,9 +18,9 @@ manner:
 
 ```yaml
 spec:
-  ecrRegistry: 288509344804.dkr.ecr.eu-north-1.amazonaws.com
+  ecrRegistry: 123456789012.dkr.ecr.us-east-1.amazonaws.com
   frequency: 8h
-  region: eu-north-1
+  region: us-east-1
 ```
 
 ## Getting Started
