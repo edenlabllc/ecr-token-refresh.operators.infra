@@ -1,5 +1,5 @@
 /*
-Copyright 2023 @apanasiuk-el.
+Copyright 2025 Edenlab
 */
 
 package controller
