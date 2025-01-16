@@ -1,22 +1,37 @@
 # ECR token refresh operator
-The `ecr token refresh` operator refreshes automatically the Amazon ECR authorization token before it expires.
+
+[![Release](https://img.shields.io/github/v/release/edenlabllc/ecr-token-refresh.operators.infra.svg?style=for-the-badge)](https://github.com/edenlabllc/ecr-token-refresh.operators.infra/releases/latest)
+[![Software License](https://img.shields.io/github/license/edenlabllc/ecr-token-refresh.operators.infra.svg?style=for-the-badge)](LICENSE)
+[![Powered By: Edenlab](https://img.shields.io/badge/powered%20by-edenlab-8A2BE2.svg?style=for-the-badge)](https://edenlab.io)
+
+The ECR token refresh operator refreshes automatically the Amazon ECR authorization token before it expires.
 
 ## Description
-Amazon Elastic Container Registry [Private Registry Authentication](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html) provides a temporary authorization token valid only for 12 hours. 
-This operator refreshes automatically the Amazon ECR authorization token before it expires, reducing the overhead in managing the authentication flow.
-This operator contains one CRD which directs the operator to create/refresh Amazon ECR authorization token in a timely manner:
+
+Amazon Elastic Container
+Registry [Private Registry Authentication](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry_auth.html)
+provides a temporary authorization token valid only for 12 hours.
+This operator refreshes automatically the Amazon ECR authorization token before it expires, reducing the overhead in
+managing the authentication flow.
+This operator contains one CRD which directs the operator to create/refresh Amazon ECR authorization token in a timely
+manner:
+
 ```yaml
 spec:
-  ecrRegistry: 288509344804.dkr.ecr.eu-north-1.amazonaws.com
+  ecrRegistry: 123456789012.dkr.ecr.us-east-1.amazonaws.com
   frequency: 8h
-  region: eu-north-1
+  region: us-east-1
 ```
 
 ## Getting Started
-You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
-**Note:** Your controller will automatically use the current context in your kubeconfig file (i.e. whatever cluster `kubectl cluster-info` shows).
+
+You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for
+testing, or run against a remote cluster.
+**Note:** Your controller will automatically use the current context in your kubeconfig file (i.e. whatever
+cluster `kubectl cluster-info` shows).
 
 ### Running on the cluster
+
 1. Install Instances of Custom Resources:
 
 ```sh
@@ -36,6 +51,7 @@ make deploy IMG=<some-registry>/core.ecr-token-refresh.operators.infra:tag
 ```
 
 ### Uninstall CRDs
+
 To delete the CRDs from the cluster:
 
 ```sh
@@ -43,6 +59,7 @@ make uninstall
 ```
 
 ### Undeploy controller
+
 UnDeploy the controller from the cluster:
 
 ```sh
@@ -52,12 +69,16 @@ make undeploy
 ## Contributing
 
 ### How it works
-This project aims to follow the Kubernetes [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/).
+
+This project aims to follow the
+Kubernetes [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/).
 
 It uses [Controllers](https://kubernetes.io/docs/concepts/architecture/controller/),
-which provide a reconcile function responsible for synchronizing resources until the desired state is reached on the cluster.
+which provide a reconcile function responsible for synchronizing resources until the desired state is reached on the
+cluster.
 
 ### Test It Out
+
 1. Install the CRDs into the cluster:
 
 ```sh
@@ -73,6 +94,7 @@ make run
 **NOTE:** You can also run this in one step by running: `make install run`
 
 ### Modifying the API definitions
+
 If you are editing the API definitions, generate the manifests such as CRs or CRDs using:
 
 ```sh
